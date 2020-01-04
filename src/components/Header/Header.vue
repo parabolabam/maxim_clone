@@ -56,6 +56,7 @@ export default class Header extends Vue {
   .header {
     position: fixed;
     margin-bottom: 5rem;
+    z-index: 100;
     padding: 1rem;
     display: flex;
     align-items: center;
