@@ -4,7 +4,7 @@
       <MainSectionHeader />
     </ContentBlock>
     <ContentBlock>
-      hi
+      <QuotationBlock />
     </ContentBlock>
     <ContentBlock>
       hi
@@ -30,12 +30,14 @@
 <script>
 import ContentBlock from '@/components/MainSection/components/ContentBlock'
 import MainSectionHeader from '@/components/MainSection/components/MainSectionHeader'
+import QuotationBlock from '@/components/MainSection/components/QuotationBlock'
 
 export default {
   name: 'mainSection',
   components: {
     ContentBlock,
-    MainSectionHeader
+    MainSectionHeader,
+    QuotationBlock
   }
 }
 </script>
