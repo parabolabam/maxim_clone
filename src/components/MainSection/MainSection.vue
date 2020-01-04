@@ -7,7 +7,7 @@
       <QuotationBlock />
     </ContentBlock>
     <ContentBlock>
-      hi
+      <WhoWeAreBlock />
     </ContentBlock>
     <ContentBlock>
       hi
@@ -31,13 +31,15 @@
 import ContentBlock from '@/components/MainSection/components/ContentBlock'
 import MainSectionHeader from '@/components/MainSection/components/MainSectionHeader'
 import QuotationBlock from '@/components/MainSection/components/QuotationBlock'
+import WhoWeAreBlock from '@/components/MainSection/components/WhoWeAreBlock'
 
 export default {
   name: 'mainSection',
   components: {
     ContentBlock,
     MainSectionHeader,
-    QuotationBlock
+    QuotationBlock,
+    WhoWeAreBlock
   }
 }
 </script>

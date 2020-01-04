@@ -14,7 +14,8 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: $color-tundora;
 }
   a {
     text-decoration: none;
