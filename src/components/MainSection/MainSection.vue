@@ -32,7 +32,6 @@ import ContentBlock from '@/components/MainSection/components/ContentBlock'
 import MainSectionHeader from '@/components/MainSection/components/MainSectionHeader'
 import QuotationBlock from '@/components/MainSection/components/QuotationBlock'
 
-
 export default {
   name: 'mainSection',
   components: {
