@@ -1,0 +1,5 @@
+@mixin iPhonefrom6to8Models() {
+    @media only screen and (max-width: 375px) {
+        @content;
+    }
+}
