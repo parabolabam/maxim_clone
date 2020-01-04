@@ -52,7 +52,10 @@ export default class Header extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.header {
+.header-wrapper{
+  .header {
+    position: fixed;
+    margin-bottom: 5rem;
     z-index: 100;
     padding: 1rem;
     display: flex;
@@ -76,4 +79,5 @@ export default class Header extends Vue {
       }
     }
   }
+}
 </style>
