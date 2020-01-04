@@ -33,3 +33,14 @@ export interface IWordsArray {
 export interface ISliderItem {
     sentence: IWordsArray[]
 }
+
+export interface IUserLittleInfo {
+  name: String,
+  secondName: String,
+  fullName: String,
+  jobPosition: {
+    field: String,
+    position: String
+  },
+  imageUrl: String
+}
