@@ -1,10 +1,12 @@
 <template>
+<div class="header-wrapper">
   <div class="header">
     <div>
       <a class="main-logo" href="/home">{{ logoText }}</a>
     </div>
     <Navigation :navigationMenuItems="navigationMenuItems" />
   </div>
+</div>
 </template>
 
 <script lang="ts">
@@ -21,13 +23,22 @@ import { INavigationMenuItem } from '@/Interfaces'
 export default class Header extends Vue {
   private navigationMenuItems: INavigationMenuItem[] = [
     {
-      text: 'Menu'
+      text: 'About'
     },
     {
-      text: 'log in'
+      text: 'Services'
     },
     {
-      text: 'sign up'
+      text: 'Works'
+    },
+    {
+      text: 'Blog'
+    },
+    {
+      text: 'Contact'
+    },
+    {
+      text: 'Page'
     }
   ];
 

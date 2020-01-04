@@ -13,7 +13,8 @@ export default class App extends Vue {}
 body {
   padding: 0;
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
   a {
     text-decoration: none;

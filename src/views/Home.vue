@@ -9,7 +9,7 @@
 <script>
 // @ is an alias to /src
 import Header from '@/components/Header/Header'
-import MainSection from '@/components/MainSection'
+import MainSection from '@/components/MainSection/MainSection'
 import Footer from '@/components/Footer'
 
 export default {
