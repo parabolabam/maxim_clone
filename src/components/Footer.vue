@@ -17,7 +17,6 @@ export default {
     align-items: center;
     grid-area: footer;
     justify-content: center;
-    position: fixed;
     bottom: 0;
     width: 100%;
   }
