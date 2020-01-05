@@ -36,7 +36,7 @@ import Services from '@/components/MainSection/components/Services'
 import RocketBlock from '@/components/MainSection/components/RocketBlock'
 import OurBlog from '@/components/MainSection/components/OurBlog'
 import GetInTouch from '@/components/MainSection/components/GetInTouchBlock'
-import OurWork from '@/components/MainSection/components/OurWorkBlock'
+import OurWork from '@/components/MainSection/components/OurWork'
 
 export default {
   name: 'mainSection',
