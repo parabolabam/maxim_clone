@@ -10,7 +10,7 @@
       <WhoWeAreBlock />
     </ContentBlock>
     <ContentBlock>
-      hi
+      <Services />
     </ContentBlock>
     <ContentBlock>
       hi
@@ -32,6 +32,7 @@ import ContentBlock from '@/components/MainSection/components/ContentBlock'
 import MainSectionHeader from '@/components/MainSection/components/MainSectionHeader'
 import QuotationBlock from '@/components/MainSection/components/QuotationBlock'
 import WhoWeAreBlock from '@/components/MainSection/components/WhoWeAreBlock'
+import Services from '@/components/MainSection/components/Services'
 
 export default {
   name: 'mainSection',
@@ -39,7 +40,8 @@ export default {
     ContentBlock,
     MainSectionHeader,
     QuotationBlock,
-    WhoWeAreBlock
+    WhoWeAreBlock,
+    Services
   }
 }
 </script>
