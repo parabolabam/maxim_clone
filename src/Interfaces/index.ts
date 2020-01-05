@@ -60,7 +60,7 @@ export interface IBlogInfo {
   imageUrl: String,
   creationDate: String | Date,
   tags: ILinkTag[],
-  blogPostHeading: String,
+  blogPostHeading: ILinkTag,
   shortDescription: String,
   readMoreLink: String
 }
