@@ -13,7 +13,7 @@
       <Services />
     </ContentBlock>
     <ContentBlock>
-      hi
+      <OurWork />
     </ContentBlock>
     <ContentBlock>
       <RocketBlock />
@@ -36,6 +36,7 @@ import Services from '@/components/MainSection/components/Services'
 import RocketBlock from '@/components/MainSection/components/RocketBlock'
 import OurBlog from '@/components/MainSection/components/OurBlog'
 import GetInTouch from '@/components/MainSection/components/GetInTouchBlock'
+import OurWork from '@/components/MainSection/components/OurWorkBlock'
 
 export default {
   name: 'mainSection',
@@ -47,7 +48,8 @@ export default {
     Services,
     RocketBlock,
     OurBlog,
-    GetInTouch
+    GetInTouch,
+    OurWork
   }
 }
 </script>
