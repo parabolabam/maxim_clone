@@ -51,3 +51,16 @@ export interface IActivityLittleInfo {
   description: String,
   imageUrl: String
 }
+
+interface ILinkTag {
+  link: String,
+  name: String
+}
+export interface IBlogInfo {
+  imageUrl: String,
+  creationDate: String | Date,
+  tags: ILinkTag[],
+  blogPostHeading: String,
+  shortDescription: String,
+  readMoreLink: String
+}
