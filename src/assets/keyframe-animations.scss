@@ -1,0 +1,28 @@
+@keyframes fadeMeIn {
+    0% {
+      background: $color-white-solid;
+    }
+};
+
+@keyframes moveFromDownsideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+};
+
+@keyframes scaleUpAndThenDown {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); 
+    }
+    100% {
+        transform: scale(1);
+    }
+}
