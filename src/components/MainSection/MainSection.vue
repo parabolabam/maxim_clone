@@ -19,7 +19,7 @@
       <RocketBlock />
     </ContentBlock>
     <ContentBlock>
-      hi
+      <OurBlog />
     </ContentBlock>
     <ContentBlock>
       hi
@@ -34,6 +34,7 @@ import QuotationBlock from '@/components/MainSection/components/QuotationBlock'
 import WhoWeAreBlock from '@/components/MainSection/components/WhoWeAreBlock'
 import Services from '@/components/MainSection/components/Services'
 import RocketBlock from '@/components/MainSection/components/RocketBlock'
+import OurBlog from '@/components/MainSection/components/OurBlog'
 
 export default {
   name: 'mainSection',
@@ -43,7 +44,8 @@ export default {
     QuotationBlock,
     WhoWeAreBlock,
     Services,
-    RocketBlock
+    RocketBlock,
+    OurBlog
   }
 }
 </script>
