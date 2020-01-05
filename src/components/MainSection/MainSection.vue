@@ -33,7 +33,7 @@ import MainSectionHeader from '@/components/MainSection/components/MainSectionHe
 import QuotationBlock from '@/components/MainSection/components/QuotationBlock'
 import WhoWeAreBlock from '@/components/MainSection/components/WhoWeAreBlock'
 import Services from '@/components/MainSection/components/Services'
-import OurWork from '@/components/MainSection/components/OurWorkBlock'
+import OurWork from '@/components/MainSection/components/OurWork'
 
 export default {
   name: 'mainSection',
