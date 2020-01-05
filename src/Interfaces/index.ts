@@ -44,3 +44,10 @@ export interface IUserLittleInfo {
   },
   imageUrl: String
 }
+
+export interface IActivityLittleInfo {
+  field: String,
+  activity: String,
+  description: String,
+  imageUrl: String
+}
