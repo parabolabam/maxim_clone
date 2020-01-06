@@ -1,12 +1,10 @@
 <template>
-<div class="header-wrapper">
   <div class="header">
     <div>
       <a class="main-logo" href="/home">{{ logoText }}</a>
     </div>
     <Navigation :navigationMenuItems="navigationMenuItems" />
   </div>
-</div>
 </template>
 
 <script lang="ts">
@@ -52,7 +50,6 @@ export default class Header extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.header-wrapper{
   .header {
     position: fixed;
     margin-bottom: 5rem;
@@ -79,5 +76,4 @@ export default class Header extends Vue {
       }
     }
   }
-}
 </style>
