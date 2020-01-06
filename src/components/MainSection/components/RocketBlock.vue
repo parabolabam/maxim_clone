@@ -1,19 +1,18 @@
 <template>
   <div class="quotation-block">
-    <div class="quote-container">
+    <div class="quote-container" v-animateOnElShow="'animatedToMoveFromRight'">
       <blockquote class="quote">
         {{ quotation.quote }}
       </blockquote>
     </div>
-    <div class="coffee-icon"></div>
+    <div class="rocket-icon" v-animateOnElShow="'animatedToMoveFromLeft'"></div>
   </div>
 </template>
 
 <script>
-import HooperSlider from '@/components/HooperSlider'
 
 export default {
-  name: 'main-section-header',
+  name: 'rocket-quotation',
   data () {
     return {
       quotation: {
@@ -22,11 +21,11 @@ export default {
       }
     }
   }
-
 }
 </script>
 
 <style lang="scss" scoped>
+
 .quotation-block {
     width: 100%;
     padding: 5rem 10rem 5rem 10rem;
@@ -56,14 +55,21 @@ export default {
         }
       }
     }
-    .coffee-icon {
+    .rocket-icon {
       flex: 1;
       font-size: 10em;
       text-align: center;
+      width: 100%;
       &:before {
       font-family: FontAwesome;
         content: "\f135";
       }
+    }
+    .animatedToMoveFromRight {
+      animation: fadeFromRightSide 1s ease-in-out;
+    }
+    .animatedToMoveFromLeft {
+      animation: fadeFromLeftSide 1s ease-in-out;
     }
 }
 </style>
