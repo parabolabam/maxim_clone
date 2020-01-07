@@ -103,6 +103,8 @@ export default {
       flex-wrap: wrap;
       justify-content: center;
       transition: all 0.5s ease-in-out;
+      max-width: 75%;
+      margin: 0 auto;
     }
   }
 
