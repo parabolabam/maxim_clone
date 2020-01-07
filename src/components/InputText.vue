@@ -19,6 +19,11 @@ export default class Header extends Vue {
   placeholder!: String;
 
   @Prop({
+    default: () => 'Submit'
+  })
+  initialText!: String;
+
+  @Prop({
     default: () => false
   })
   textArea!: Boolean;
@@ -28,11 +33,10 @@ export default class Header extends Vue {
   })
   type!: String;
 
-  data () {
-    return {
-
-    }
-  }
+  @Prop({
+    default: () => 'Arial'
+  })
+  fontFamilyInline!: String;
 }
 </script>
 
@@ -53,11 +57,22 @@ export default class Header extends Vue {
     min-width: 34.625rem;
     min-height: 2.75rem;
     margin-bottom: 1.875rem;
+    &[type='submit'] {
+      text-align: center;
+      min-width: 11.28rem;
+      min-height: 3.75rem;
+      padding: 1.125rem 1.5625rem;
+      background: $color-java;
+      color: $color-white-solid;
+      &:hover {
+        background: $color-mine-shaft-darker;
+      }
+    }
   }
   textarea {
     min-width: 34.625rem;
-    min-height: 8.25rem;
+    min-height: 7.875rem;
     padding: 1rem 0.5rem 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.875rem;
   }
 </style>
