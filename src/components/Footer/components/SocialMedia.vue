@@ -69,24 +69,24 @@ export default {
         }
       }
       .pinterest {
-          &:before {
-              content: "\f0d2"
-          }
-          &:hover {
-              color: $color-velencia
-          }
+        &:before {
+          content: "\f0d2"
+        }
+        &:hover {
+          color: $color-velencia
+        }
       }
     }
     .credits, .allRightsReserved {
-        color: $color-alto;
+      color: $color-alto;
     }
     .credits {
-        a {
-            color: $color-alto;
-            &:hover {
-                text-decoration: underline;
-            }
+      a {
+        color: $color-alto;
+        &:hover {
+            text-decoration: underline;
         }
+      }
     }
 }
 </style>

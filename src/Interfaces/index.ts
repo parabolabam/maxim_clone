@@ -64,3 +64,8 @@ export interface IBlogInfo {
   shortDescription: String,
   readMoreLink: String
 }
+
+export interface IInputProps {
+  placeHolder?: String,
+
+}
