@@ -1,6 +1,7 @@
 <template>
   <div class="input" v-if="!textArea">
-    <input :type="type" :placeholder="placeholder" />
+    <input :type="type" :placeholder="placeholder" v-if="!isSubmitBtn" />
+    <input type="submit" :value="initialText" v-else />
   </div>
   <div v-else>
     <textarea :placeholder="placeholder"></textarea>
@@ -37,6 +38,10 @@ export default class Header extends Vue {
     default: () => 'Arial'
   })
   fontFamilyInline!: String;
+
+  get isSubmitBtn () : Boolean {
+    return this.type === 'submit'
+  }
 }
 </script>
 
