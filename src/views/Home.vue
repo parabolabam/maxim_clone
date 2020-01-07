@@ -3,6 +3,7 @@
   <Header />
   <MainSection />
   <Footer />
+  <ScrollUp />
 </div>
 </template>
 
@@ -11,13 +12,15 @@
 import Header from '@/components/Header/Header'
 import MainSection from '@/components/MainSection/MainSection'
 import Footer from '@/components/Footer/Footer'
+import ScrollUp from '@/components/ScrollUp'
 
 export default {
   name: 'home',
   components: {
     Header,
     MainSection,
-    Footer
+    Footer,
+    ScrollUp
   }
 }
 </script>
