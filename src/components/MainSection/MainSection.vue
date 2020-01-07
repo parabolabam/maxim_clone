@@ -22,7 +22,7 @@
       <OurBlog />
     </ContentBlock>
     <ContentBlock>
-      hi
+      <GetInTouch />
     </ContentBlock>
   </div>
 </template>
@@ -35,6 +35,7 @@ import WhoWeAreBlock from '@/components/MainSection/components/WhoWeAreBlock'
 import Services from '@/components/MainSection/components/Services'
 import RocketBlock from '@/components/MainSection/components/RocketBlock'
 import OurBlog from '@/components/MainSection/components/OurBlog'
+import GetInTouch from '@/components/MainSection/components/GetInTouchBlock'
 
 export default {
   name: 'mainSection',
@@ -45,7 +46,8 @@ export default {
     WhoWeAreBlock,
     Services,
     RocketBlock,
-    OurBlog
+    OurBlog,
+    GetInTouch
   }
 }
 </script>
