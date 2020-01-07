@@ -105,6 +105,7 @@ export default class BlogPostCard extends Vue {
 
     .short-description-container {
       padding: 1rem;
+      background: $color-white-solid;
       .read-more-link {
         font-size: 13px;
         &:hover {

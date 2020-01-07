@@ -4,17 +4,22 @@
     <div class="blogCardsContainer">
       <BlogPostCard v-for="(blogInfo, index) in blogPosts" :key="index" :blogInfo="blogInfo"/>
     </div>
+    <div class="more-blog-posts">
+      <InputText type="submit" :initialText="'More Blog Posts'"/>
+    </div>
   </div>
 </template>
 
 <script lang='ts'>
 import BlogPostCard from '@/components/MainSection/components/BlogPostCard'
+import InputText from '@/components/InputText'
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { IBlogInfo } from '@/Interfaces'
 
 @Component({
   components: {
-    BlogPostCard
+    BlogPostCard,
+    InputText
   }
 })
 export default class OurBlog extends Vue {
@@ -111,6 +116,10 @@ export default class OurBlog extends Vue {
       text-align: center;
       font-size: 46px;
       margin: 0.685rem 0 2.5rem 0
+    }
+    .more-blog-posts {
+      margin-top: 1.875rem;
+      text-align: center;
     }
     .blogCardsContainer {
         display: flex;

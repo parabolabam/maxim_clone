@@ -11,6 +11,7 @@
         </div>
         <div class="second-column">
           <InputText :textArea="true" :placeholder="'Message'"/>
+          <InputText :type="'submit'" :initialText="'Send message'" />
         </div>
       </div>
     </div>
@@ -56,6 +57,7 @@ export default {
           color: $color-alabaster-lighter;
           opacity: 0.7;
           max-width: 71rem;
+          line-height: 1.6em;
       }
       .get-in-touch-form {
           display: flex;
