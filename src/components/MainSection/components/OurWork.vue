@@ -5,7 +5,7 @@
       <FilterTab v-for="(filterTab, index) in filterTabs" @tabActive="setCurrentTab" :key="index" :textCaption="filterTab" :tabIndex="index" :isActive="index === currentTabIndex"/>
     </div>
     <div class="portfolio-works">
-      <Portfolio v-for="(portfolio, index) in filteredPortfolios" :key="index" :portfolio="portfolio" />
+      <Portfolio v-for="(portfolio, index) in filteredPortfolios" :key="index" :portfolio="portfolio" :animationClassObj="animationClassObj"/>
     </div>
   </div>
 </template>
@@ -21,11 +21,47 @@ export default {
     Portfolio
   },
   methods: {
+    removeAnimationClassToPortfolio () {
+      const portfolioWorks = document.getElementsByClassName('portfolio-work')
+
+      return new Promise((resolve, reject) => {
+        try {
+          Array.from(portfolioWorks).forEach(portfolio => {
+            // reffer to https://css-tricks.com/restart-css-animation/
+            void portfolio.offsetWidth
+            portfolio.classList.remove('animated-zoom-in')
+          })
+          resolve()
+        } catch (error) {
+          reject(error)
+        }
+      })
+    },
+    addAnimationClassToPortfolio () {
+      const portfolioWorks = document.getElementsByClassName('portfolio-work')
+
+      return new Promise((resolve, reject) => {
+        try {
+          Array.from(portfolioWorks).forEach(portfolio => {
+            // reffer to https://css-tricks.com/restart-css-animation/
+            void portfolio.offsetWidth
+            portfolio.classList.add('animated-zoom-in')
+          })
+          resolve()
+        } catch (error) {
+          reject(error)
+        }
+      })
+    },
     isActive (index) {
       return this.currentTab === index
     },
     setCurrentTab (index) {
-      this.currentTabIndex = index
+      this.removeAnimationClassToPortfolio()
+        .then(this.addAnimationClassToPortfolio)
+        .then(() => {
+          this.currentTabIndex = index
+        })
     }
   },
   computed: {
@@ -42,6 +78,12 @@ export default {
     return {
       currentTabIndex: -1,
       headerTitle: 'Our Works',
+      animationClassObj: {
+        class: 'animated-zoom-in',
+        callback () {
+
+        }
+      },
       filterTabs: [
         'All',
         'Web',
@@ -82,17 +124,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .animated-zoom-in {
+    transition: all 0.6s;
+    animation: zoom-in .6s;
+  }
   .our-work-block {
     width: 100%;
     padding: 6.25rem 0 5rem 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     text-align: center;
     font-size: 46px;
     font-weight: bold;
     h4 {
-        margin: 0.625rem 0 1.25rem 0
+      margin: 0.625rem 0 1.25rem 0
     }
     .filter-tabs {
       display: flex;
@@ -102,9 +147,7 @@ export default {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      transition: all 0.5s ease-in-out;
-      max-width: 75%;
-      margin: 0 auto;
+      align-items: center;
     }
   }
 
