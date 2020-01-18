@@ -1,7 +1,8 @@
 export function email (email: String) : boolean {
+  return /.*@.*\..*/.test(email)
+}
+
+export function empty (value: String) : Boolean {
   debugger
-  if (email === '') {
-    return false
-  }
-  return /\d/.test(email)
+  return value !== ''
 }

@@ -4,7 +4,7 @@
       <img :src="blogInfo.imageUrl" alt="blogpost-image"/>
     </div>
     <div class="name-date-info">
-      <div class="file-icon"></div>
+      <i class="file-icon far fa-file"></i>
       <div class="creation-date"> {{ blogInfo.creationDate | dateFormat('MMMM DD, YYYY') }} </div>
       <div class="tags">
         <span>
@@ -80,12 +80,8 @@ export default class BlogPostCard extends Vue {
         margin: 0.1rem;
       }
       .file-icon {
-        &:before {
-          font-family: FontAwesome;
-          font-size: 2em;
-          content: "\f15b";
-          color: $color-alabaster;
-        }
+        font-size: 2em;
+        color: $color-alabaster;
       }
       .creation-date, .tags {
         line-height: 2.2;

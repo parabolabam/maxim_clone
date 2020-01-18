@@ -1,7 +1,8 @@
 <template>
   <div class="input" v-if="!textArea">
-    <input :type="type" :placeholder="placeholder" v-if="!isSubmitBtn" />
+    <input :type="type" :placeholder="placeholder" v-if="!isSubmitBtn" :class="{ invalid: isInvalid }"/>
     <input type="submit" :value="initialText" v-else />
+    <div class="error-message" v-if="!!errMsg">{{ errMsg }}</div>
   </div>
   <div v-else>
     <textarea :placeholder="placeholder"></textarea>
@@ -41,6 +42,10 @@ export default class Header extends Vue {
 
   private errMsg: String = '';
 
+  get isInvalid (): Boolean {
+    return !!this.errMsg
+  }
+
   get isSubmitBtn () : Boolean {
     return this.type === 'submit'
   }
@@ -53,6 +58,18 @@ export default class Header extends Vue {
 
 <style lang="scss" scoped>
 
+  .invalid {
+    background-color: #fce4e4;
+    border: 1px solid #cc0033;
+    outline: none;
+  }
+  .error-message {
+    color: #cc0033;
+    font-size: 16px;
+    line-height: 15px;
+    margin: 5px 0;
+
+  }
   input, textarea {
 
     background: rgb(227, 231, 228);
@@ -67,7 +84,6 @@ export default class Header extends Vue {
   input {
     min-width: 34.625rem;
     min-height: 2.75rem;
-    margin-bottom: 1.875rem;
     &[type='submit'] {
       text-align: center;
       min-width: 11.28rem;

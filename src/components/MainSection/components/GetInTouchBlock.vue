@@ -5,9 +5,9 @@
       <p>{{ paragraphText }}</p>
       <div class="get-in-touch-form">
         <div class="first-column">
-          <InputText :placeholder="'Your Name'" :type="'text'"/>
-          <InputText :placeholder="'Your Email'" :type="'text'" v-validate="['email', 'Invalid Email']"/>
-          <InputText :placeholder="'Your Subject'" :type="'text'"/>
+          <InputText :placeholder="'Your Name'" :type="'text'" v-validate="[['empty'], 'Provide not empty value']"/>
+          <InputText :placeholder="'Your Email'" :type="'text'" v-validate="[['email'], 'Invalid Email']"/>
+          <InputText :placeholder="'Your Subject'" :type="'text'" v-validate="[['empty'], 'Provide not empty value']"/>
         </div>
         <div class="second-column">
           <InputText :textArea="true" :placeholder="'Message'"/>
@@ -64,8 +64,8 @@ export default {
           justify-content: center;
           .first-column, .second-column {
             display: flex;
+            justify-content: space-between;
             flex-direction: column;
-            margin: 1rem;
           }
           .first-column {
             margin: 1rem 1rem 1rem 0;

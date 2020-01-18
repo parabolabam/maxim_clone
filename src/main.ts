@@ -7,6 +7,22 @@ import VueFilterDateFormat from 'vue-filter-date-format'
 import Modal from '@/components/Modal'
 import * as validators from '@/modules/validation-service'
 
+function validationProcess ({ binding, value, context, componentInstance }) {
+  let validationResult = null
+  debugger
+
+  binding.value[0].forEach(validatorName => {
+    validationResult = validators[validatorName](value)
+  })
+
+  if (!validationResult) {
+    context.$emit('invalid')
+    componentInstance.setErrorMessage(binding.value[1])
+  } else {
+    context.$emit('valid')
+  }
+}
+
 Vue.component('modal', Modal)
 
 Vue.use(VueFilterDateFormat, {
@@ -29,26 +45,18 @@ Vue.use(VueFilterDateFormat, {
 
 Vue.directive('validate', {
   bind (el, binding, { context, componentInstance }) {
-    debugger
     if (!Array.isArray(binding.value) || binding.value.length !== 2) {
       throw new Error('Please provide an array with two values: validator name and error message')
     }
+    if (!Array.isArray(binding.value[0])) {
+      throw new Error('Please provide an array of validators names')
+    }
     el.querySelector('input').addEventListener('blur', ({ currentTarget: { value } }) => {
-      const validationResult = validators[binding.value[0]](value)
-
-      if (!validationResult) {
-        context.$emit('invalid')
-        componentInstance.setErrorMessage(' ')
-      } else {
-        context.$emit('valid')
-      }
+      validationProcess({ binding, value, context, componentInstance })
     })
   },
-  inserted (el, binding) {
-    el.focus()
-  },
   unbind (el, binding) {
-
+    el.querySelector('input').removeEventListener('blur')
   }
 })
 
