@@ -3,6 +3,5 @@ export function email (email: String) : boolean {
 }
 
 export function empty (value: String) : Boolean {
-  debugger
   return value !== ''
 }
