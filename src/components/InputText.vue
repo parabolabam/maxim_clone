@@ -39,8 +39,14 @@ export default class Header extends Vue {
   })
   fontFamilyInline!: String;
 
+  private errMsg: String = '';
+
   get isSubmitBtn () : Boolean {
     return this.type === 'submit'
+  }
+
+  setErrorMessage (errMessage: String) {
+    this.errMsg = errMessage
   }
 }
 </script>

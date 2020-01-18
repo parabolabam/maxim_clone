@@ -1,13 +1,13 @@
 <template>
   <div class="quotation-block">
-    <div class="quote-container">
+    <div v-animateOnElShow="'animatedToMoveFromRight'" class="quote-container">
       <blockquote class="quote">
         <i class="quotation-mark fas fa-quote-left"></i>
         {{ quotation.quote }}
         <cite>{{ quotation.author }}</cite>
       </blockquote>
     </div>
-    <i class="coffee-icon fas fa-coffee"></i>
+    <i v-animateOnElShow="'animatedToMoveFromLeft'" class="coffee-icon fas fa-coffee"></i>
   </div>
 </template>
 
@@ -35,6 +35,12 @@ export default {
     background-color: $color-mountain-meadow;
     display: flex;
     color: $color-white-solid;
+    .animatedToMoveFromRight {
+      animation: fadeFromRightSide 1s ease-in-out;
+    }
+    .animatedToMoveFromLeft {
+      animation: fadeFromLeftSide 1s ease-in-out;
+    }
     .quote-container {
       flex: 1;
       .quote {

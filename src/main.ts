@@ -5,6 +5,7 @@ import store from './store'
 import './registerServiceWorker'
 import VueFilterDateFormat from 'vue-filter-date-format'
 import Modal from '@/components/Modal'
+import * as validators from '@/modules/validation-service'
 
 Vue.component('modal', Modal)
 
@@ -24,6 +25,31 @@ Vue.use(VueFilterDateFormat, {
     'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
   ]
+})
+
+Vue.directive('validate', {
+  bind (el, binding, { context, componentInstance }) {
+    debugger
+    if (!Array.isArray(binding.value) || binding.value.length !== 2) {
+      throw new Error('Please provide an array with two values: validator name and error message')
+    }
+    el.querySelector('input').addEventListener('blur', ({ currentTarget: { value } }) => {
+      const validationResult = validators[binding.value[0]](value)
+
+      if (!validationResult) {
+        context.$emit('invalid')
+        componentInstance.setErrorMessage(' ')
+      } else {
+        context.$emit('valid')
+      }
+    })
+  },
+  inserted (el, binding) {
+    el.focus()
+  },
+  unbind (el, binding) {
+
+  }
 })
 
 Vue.directive('animateOnElShow', {

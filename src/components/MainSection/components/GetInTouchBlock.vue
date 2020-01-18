@@ -6,7 +6,7 @@
       <div class="get-in-touch-form">
         <div class="first-column">
           <InputText :placeholder="'Your Name'" :type="'text'"/>
-          <InputText :placeholder="'Your Email'" :type="'text'"/>
+          <InputText :placeholder="'Your Email'" :type="'text'" v-validate="['email', 'Invalid Email']"/>
           <InputText :placeholder="'Your Subject'" :type="'text'"/>
         </div>
         <div class="second-column">

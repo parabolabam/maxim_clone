@@ -30,7 +30,7 @@ export default {
 
 .quotation-block {
     width: 100%;
-    padding: 5rem 10rem 5rem 10rem;
+    padding: 5rem 10rem;
     display: flex;
     align-items: center;
     flex-direction: column;
