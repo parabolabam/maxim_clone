@@ -1,9 +1,15 @@
 <template>
   <div class="footer">
     <div class="social-media">
-      <a :href="instagramLink" target="_blank" rel="noopener noreferrer"><div class="instagram"></div></a>
-      <a :href="twitterLink" target="_blank" rel="noopener noreferrer"><div class="twitter"></div></a>
-      <a href="#" target="_blank" rel="noopener noreferrer"><div class="pinterest"></div></a>
+      <a :href="instagramLink" target="_blank" rel="noopener noreferrer">
+        <i class="instagram fab fa-instagram"></i>
+      </a>
+      <a :href="twitterLink" target="_blank" rel="noopener noreferrer">
+        <i class="twitter fab fa-twitter"></i>
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <i class="pinterest fab fa-pinterest-square"></i>
+      </a>
     </div>
     <div class="allRightsReserved">
         <p> {{ allRightsReservedText }}, {{ date | dateFormat(yearDateFormat) }} </p>

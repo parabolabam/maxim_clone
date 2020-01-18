@@ -2,10 +2,12 @@
   <div class="quotation-block">
     <div class="quote-container" v-animateOnElShow="'animatedToMoveFromRight'">
       <blockquote class="quote">
+        <i class="quotation-mark fas fa-quote-left"></i>
+
         {{ quotation.quote }}
       </blockquote>
     </div>
-    <div class="rocket-icon" v-animateOnElShow="'animatedToMoveFromLeft'"></div>
+    <i v-animateOnElShow="'animatedToMoveFromLeft'" class="rocket-icon fas fa-rocket"></i>
   </div>
 </template>
 
@@ -43,15 +45,10 @@ export default {
         font-size: 36px;
         font-weight: 700;
         text-align: center;
-        &:before {
+        .quotation-mark {
           font-size: 64px;
-          font-family: FontAwesome;
-          content: "\f10d";
           margin-right: 20px;
           opacity: 0.6;
-        }
-        &:after {
-          content: ""
         }
       }
     }
@@ -60,10 +57,6 @@ export default {
       font-size: 10em;
       text-align: center;
       width: 100%;
-      &:before {
-      font-family: FontAwesome;
-        content: "\f135";
-      }
     }
     .animatedToMoveFromRight {
       animation: fadeFromRightSide 1s ease-in-out;

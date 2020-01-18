@@ -1,5 +1,5 @@
 <template>
-  <div class="scrollUp" @click="scrollToTop"></div>
+  <i class="scroll-up fas fa-arrow-up" @click="scrollToTop"></i>
 </template>
 
 <script lang="ts">
@@ -15,23 +15,19 @@ export default class ScrollUp extends Vue {
 </script>
 
 <style lang="scss" scoped>
-  .scrollUp {
+  .scroll-up {
     width: 3rem;
+    height: 3rem;
     background: $color-tundora-darker;
     bottom: 0;
     position: fixed;
     right: 0;
     color: $color-white-solid;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    &:before {
-      content: "\f106";
-      font-family: FontAwesome;
-      font-size: 2em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 3rem;
-    }
     &:hover {
       background: $color-java;
     }

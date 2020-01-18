@@ -2,11 +2,12 @@
   <div class="quotation-block">
     <div class="quote-container">
       <blockquote class="quote">
+        <i class="quotation-mark fas fa-quote-left"></i>
         {{ quotation.quote }}
         <cite>{{ quotation.author }}</cite>
       </blockquote>
     </div>
-    <div class="coffee-icon"></div>
+    <i class="coffee-icon fas fa-coffee"></i>
   </div>
 </template>
 
@@ -42,35 +43,32 @@ export default {
         line-height: 1.1em;
         text-align: right;
         width: 80%;
+        .quotation-mark {
+          font-size: 64px;
+          margin-right: 20px;
+          opacity: 0.6;
+        }
         cite {
           display: block;
           font-size: 12px;
           color: $color-emperor;
           font-style: normal;
-          &:before {
-            content: "\2014 \0020"
-          }
+
         }
-        &:before {
+        .quot {
           font-size: 64px;
-          font-family: FontAwesome;
-          content: "\f10d";
           margin-right: 20px;
           opacity: 0.6;
         }
-        &:after {
-          content: ""
-        }
+
       }
     }
     .coffee-icon {
       flex: 1;
       font-size: 10em;
-      text-align: center;
-      &:before {
-      font-family: FontAwesome;
-        content: "\f0f4";
-      }
+      display: flex;
+      justify-content: center;
+      align-items: center
     }
 }
 </style>
