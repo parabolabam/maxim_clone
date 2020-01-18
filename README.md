@@ -1,6 +1,7 @@
 ## TODO
  - form validation
  - style modal window
+ - add tests support
  - deploy
 
 ## Project setup
