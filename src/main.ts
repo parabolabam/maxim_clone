@@ -9,7 +9,6 @@ import * as validators from '@/modules/validation-service'
 
 function validationProcess ({ binding, value, context, componentInstance }) {
   let validationResult = null
-  debugger
 
   binding.value[0].forEach(validatorName => {
     validationResult = validators[validatorName](value)
