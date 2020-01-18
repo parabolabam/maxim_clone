@@ -32,9 +32,6 @@ export default {
       }
     }
   },
-  mounted () {
-    console.log('this.portfolioKey', this.portfolioKey)
-  },
   data () {
     return {
       hovered: false

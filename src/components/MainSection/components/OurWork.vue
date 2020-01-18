@@ -25,8 +25,6 @@ export default {
   },
   methods: {
     openModal (data) {
-      console.log('open modal')
-      debugger
       this.showModal = true
       this.portfolioIndex = data
     },
