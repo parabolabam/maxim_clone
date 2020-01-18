@@ -1,4 +1,7 @@
-# audio-editor
+## TODO
+ - form validation
+ - style modal window
+ - deploy
 
 ## Project setup
 ```

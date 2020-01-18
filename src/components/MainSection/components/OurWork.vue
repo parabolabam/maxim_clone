@@ -5,8 +5,11 @@
       <FilterTab v-for="(filterTab, index) in filterTabs" @tabActive="setCurrentTab" :key="index" :textCaption="filterTab" :tabIndex="index" :isActive="index === currentTabIndex"/>
     </div>
     <div class="portfolio-works">
-      <Portfolio v-for="(portfolio, index) in filteredPortfolios" :key="index" :portfolio="portfolio" :animationClassObj="animationClassObj"/>
+      <Portfolio v-for="(portfolio, index) in filteredPortfolios" :key="index" :portfolioKey="index" :portfolio="portfolio" @revealPortfolio="openModal"/>
     </div>
+    <modal v-if="showModal" @closeModal="hideModal">
+      <Portfolio :portfolio="filteredPortfolios[portfolioIndex]"/>
+    </modal>
   </div>
 </template>
 
@@ -21,8 +24,17 @@ export default {
     Portfolio
   },
   methods: {
+    openModal (data) {
+      console.log('open modal')
+      debugger
+      this.showModal = true
+      this.portfolioIndex = data
+    },
+    hideModal () {
+      this.showModal = false
+    },
     removeAnimationClassToPortfolio () {
-      const portfolioWorks = document.getElementsByClassName('portfolio-work')
+      const portfolioWorks = document.getElementsByClassName('portfolio-work-container')
 
       return new Promise((resolve, reject) => {
         try {
@@ -38,7 +50,7 @@ export default {
       })
     },
     addAnimationClassToPortfolio () {
-      const portfolioWorks = document.getElementsByClassName('portfolio-work')
+      const portfolioWorks = document.getElementsByClassName('portfolio-work-container')
 
       return new Promise((resolve, reject) => {
         try {
@@ -76,6 +88,8 @@ export default {
   },
   data () {
     return {
+      showModal: false,
+      portfolioIndex: -1,
       currentTabIndex: -1,
       headerTitle: 'Our Works',
       animationClassObj: {
