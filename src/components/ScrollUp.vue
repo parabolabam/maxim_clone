@@ -2,14 +2,12 @@
   <i class="scroll-up fas fa-arrow-up" @click="scrollToTop"></i>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import { Component, Prop } from 'vue-property-decorator'
-
-@Component({})
-export default class ScrollUp extends Vue {
-  scrollToTop () {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+<script>
+export default {
+  methods: {
+    scrollToTop () {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
   }
 }
 </script>

@@ -8,19 +8,19 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import { Component, Prop } from 'vue-property-decorator'
-import { IUserLittleInfo } from '@/Interfaces'
+<script>
 
-@Component
-export default class UserLittleInfo extends Vue {
-    @Prop()
-    userLittleInfo!: IUserLittleInfo;
-
-    get jobPosition () : String {
+export default {
+  props: {
+    userLittleInfo: {
+      required: true
+    }
+  },
+  computed: {
+    jobPosition () {
       return `${this.userLittleInfo.jobPosition.field} ${this.userLittleInfo.jobPosition.position}`
     }
+  }
 }
 </script>
 

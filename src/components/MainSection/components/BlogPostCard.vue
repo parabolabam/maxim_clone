@@ -29,15 +29,14 @@
     </div>
 </template>
 
-<script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator'
-import { IBlogInfo } from '@/Interfaces'
+<script>
 
-@Component
-export default class BlogPostCard extends Vue {
-  @Prop()
-  blogInfo!: IBlogInfo;
-
+export default {
+  props: {
+    blogInfo: {
+      required: true
+    }
+  },
   data () {
     return {
       headerTitle: 'Our Blog',

@@ -4,32 +4,25 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import { Component, Prop } from 'vue-property-decorator'
-import InputText from '@/components/InputText'
+<script>
 
-@Component({
-  components: {
-    InputText
-  }
-})
-export default class FilterTab extends Vue {
-  @Prop()
-  textCaption!: String;
+export default {
 
-  @Prop()
-  tabIndex!: Number;
+  props: {
+    textCaption: String,
+    tabIndex: Number,
+    isActive: Boolean
 
-  @Prop()
-  isActive!: Boolean;
-
-  setActive () {
-    this.$emit('tabActive', this.tabIndex)
-  }
-
-  get isTabActive () {
-    return this.isActive
+  },
+  computed: {
+    isTabActive () {
+      return this.isActive
+    }
+  },
+  methods: {
+    setActive () {
+      this.$emit('tabActive', this.tabIndex)
+    }
   }
 }
 </script>

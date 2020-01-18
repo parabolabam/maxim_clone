@@ -10,101 +10,99 @@
   </div>
 </template>
 
-<script lang='ts'>
+<script>
 import BlogPostCard from '@/components/MainSection/components/BlogPostCard'
 import InputText from '@/components/InputText'
-import { Component, Prop, Vue } from 'vue-property-decorator'
-import { IBlogInfo } from '@/Interfaces'
 
-@Component({
+export default {
   components: {
     BlogPostCard,
     InputText
-  }
-})
-export default class OurBlog extends Vue {
+  },
   data () {
     return {
       headerTitle: 'Our Blog'
     }
-  }
-
-  get blogPosts () : IBlogInfo[] {
-    return [{
-      imageUrl: require('@/assets/images/blogsPics/img1.jpg'),
-      creationDate: new Date(),
-      tags: [{
-        link: '#',
-        name: 'Design'
-      }, {
-        link: '#',
-        name: 'Blog'
-      }],
-      blogPostHeading: {
-        link: '',
-        name: 'New design trends'
-      },
-      shortDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-      readMoreLink: '#'
-    },
-    {
-      imageUrl: require('@/assets/images/blogsPics/img2.jpg'),
-      creationDate: new Date(),
-      tags: [{
-        link: '#',
-        name: 'Design'
-      },
-      {
-        link: '#',
-        name: 'News'
-      }],
-      blogPostHeading: {
-        link: '#',
-        name: 'Retro is great'
-      },
-      shortDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-      readMoreLink: '#'
-    },
-    {
-      imageUrl: require('@/assets/images/blogsPics/img3.jpg'),
-      creationDate: new Date(),
-      tags: [{
-        link: '#',
-        name: 'Design'
-      },
-      {
-        link: '#',
-        name: 'Tips'
-      }],
-      blogPostHeading: {
-        link: '#',
-        name: 'Isometric mockup'
-      },
-      shortDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-      readMoreLink: '#'
-    },
-    {
-      imageUrl: require('@/assets/images/blogsPics/img4.jpg'),
-      creationDate: new Date(),
-      tags: [
-        {
+  },
+  computed: {
+    blogPosts () {
+      return [{
+        imageUrl: require('@/assets/images/blogsPics/img1.jpg'),
+        creationDate: new Date(),
+        tags: [{
           link: '#',
-          name: 'News'
+          name: 'Design'
+        }, {
+          link: '#',
+          name: 'Blog'
+        }],
+        blogPostHeading: {
+          link: '',
+          name: 'New design trends'
+        },
+        shortDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        readMoreLink: '#'
+      },
+      {
+        imageUrl: require('@/assets/images/blogsPics/img2.jpg'),
+        creationDate: new Date(),
+        tags: [{
+          link: '#',
+          name: 'Design'
         },
         {
           link: '#',
-          name: 'Tutorial'
-        }
-      ],
-      blogPostHeading: {
-        link: '#',
-        name: 'Free icon set'
+          name: 'News'
+        }],
+        blogPostHeading: {
+          link: '#',
+          name: 'Retro is great'
+        },
+        shortDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        readMoreLink: '#'
       },
-      shortDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-      readMoreLink: '#'
-    }]
+      {
+        imageUrl: require('@/assets/images/blogsPics/img3.jpg'),
+        creationDate: new Date(),
+        tags: [{
+          link: '#',
+          name: 'Design'
+        },
+        {
+          link: '#',
+          name: 'Tips'
+        }],
+        blogPostHeading: {
+          link: '#',
+          name: 'Isometric mockup'
+        },
+        shortDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        readMoreLink: '#'
+      },
+      {
+        imageUrl: require('@/assets/images/blogsPics/img4.jpg'),
+        creationDate: new Date(),
+        tags: [
+          {
+            link: '#',
+            name: 'News'
+          },
+          {
+            link: '#',
+            name: 'Tutorial'
+          }
+        ],
+        blogPostHeading: {
+          link: '#',
+          name: 'Free icon set'
+        },
+        shortDescription: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        readMoreLink: '#'
+      }]
+    }
   }
 }
+
 </script>
 
 <style lang="scss" scoped>

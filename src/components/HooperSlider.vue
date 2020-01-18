@@ -1,46 +1,43 @@
 <template>
-    <div>
-        <Hooper
-            class="hooper"
-            :vertical="true"
-            :style="hooperStyle"
-            :itemsToShow="1"
-            :centerMode="true"
-            :infiniteScroll="true"
-            ::autoPlay="true"
-        >
-            <HooperNavigation slot="hooper-addons"></HooperNavigation>
-
-            <Slide v-for="(sliderItem, index) in sliderItems" :key="index">
-                {{ sliderItem }}
-            </Slide>
-        </Hooper>
-    </div>
+  <div>
+    <Hooper
+      class="hooper"
+      :vertical="true"
+      :style="hooperStyle"
+      :itemsToShow="1"
+      :centerMode="true"
+      :infiniteScroll="true"
+      ::autoPlay="true"
+    >
+      <HooperNavigation slot="hooper-addons"></HooperNavigation>
+        <Slide v-for="(sliderItem, index) in sliderItems" :key="index">
+          {{ sliderItem }}
+        </Slide>
+    </Hooper>
+  </div>
 </template>
 
-<script lang='ts'>
-import Vue from 'vue'
-import { Component, Prop } from 'vue-property-decorator'
+<script>
 import {
   Hooper,
   Slide,
   Navigation as HooperNavigation
 } from 'hooper'
-import { IHooperSliderProps, ISliderItem } from '@/Interfaces'
 
-@Component({
+export default {
   components: {
     Hooper,
     Slide,
     HooperNavigation
+  },
+  props: {
+    sliderItems: {
+      required: true
+    },
+    hooperStyle: {
+      required: true
+    }
   }
-})
-export default class HooperSlider extends Vue {
-    @Prop()
-    sliderItems!: String[];
-
-    @Prop()
-    hooperStyle!: any;
 }
 </script>
 

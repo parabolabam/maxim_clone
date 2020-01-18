@@ -9,50 +9,56 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import { Component, Prop } from 'vue-property-decorator'
-
-@Component({})
-export default class Header extends Vue {
-  @Prop({
-    default: () => 'Start typing...'
-  })
-  placeholder!: String;
-
-  @Prop({
-    default: () => 'Submit'
-  })
-  initialText!: String;
-
-  @Prop({
-    default: () => false
-  })
-  textArea!: Boolean;
-
-  @Prop({
-    default: () => 'text'
-  })
-  type!: String;
-
-  @Prop({
-    default: () => 'Arial'
-  })
-  fontFamilyInline!: String;
-
-  private errMsg: String = '';
-
-  get isInvalid (): Boolean {
-    return !!this.errMsg
+<script>
+export default {
+  props: {
+    placeholder: {
+      type: String,
+      default () {
+        return 'Start typing...'
+      }
+    },
+    initialText: {
+      type: String,
+      default () {
+        return 'Submit'
+      }
+    },
+    textArea: {
+      default () {
+        return false
+      }
+    },
+    type: {
+      default () {
+        return 'text'
+      }
+    },
+    fontFamilyInline: {
+      default () {
+        return 'Arial'
+      }
+    }
+  },
+  data () {
+    return {
+      errMsg: ''
+    }
+  },
+  computed: {
+    isInvalid () {
+      return !!this.errMsg
+    },
+    isSubmitBtn () {
+      return this.type === 'submit'
+    }
+  },
+  methods: {
+    setErrorMessage (errMessage) {
+      this.errMsg = errMessage
+    }
   }
 
-  get isSubmitBtn () : Boolean {
-    return this.type === 'submit'
-  }
-
-  setErrorMessage (errMessage: String) {
-    this.errMsg = errMessage
-  }
 }
 </script>
 

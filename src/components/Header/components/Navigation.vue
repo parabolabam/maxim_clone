@@ -10,15 +10,14 @@
     </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import { Component, Prop } from 'vue-property-decorator'
-import { INavigationMenuItem } from '@/Interfaces'
+<script>
 
-@Component
-export default class Navigation extends Vue {
-  @Prop({ default: () => [] })
-  navigationMenuItems!: INavigationMenuItem[];
+export default {
+  props: {
+    navigationMenuItems: {
+      requried: true
+    }
+  }
 }
 </script>
 
