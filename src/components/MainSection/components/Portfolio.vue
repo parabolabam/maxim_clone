@@ -32,11 +32,9 @@ export default {
   },
   methods: {
     onMouseEnter () {
-      console.log(1)
       this.hovered = true
     },
     onMouseOut () {
-      console.log(2)
       this.hovered = false
     }
   }
