@@ -7,23 +7,14 @@
   </div>
 </template>
 
-<script lang='ts'>
-import { Component, Vue } from 'vue-property-decorator'
+<script>
 import Activity from '@/components/MainSection/components/Activity'
-import { IActivityLittleInfo } from '@/Interfaces'
 
-interface IDataReturnStatement {
-    headerLevelFourTitle: String,
-    activities: IActivityLittleInfo[]
-}
-
-@Component({
+export default {
   components: {
     Activity
-  }
-})
-export default class Services extends Vue {
-  data () : IDataReturnStatement {
+  },
+  data () {
     return {
       headerLevelFourTitle: 'Services',
       activities: [{

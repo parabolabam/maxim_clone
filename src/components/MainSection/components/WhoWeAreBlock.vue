@@ -19,31 +19,14 @@
   </div>
 </template>
 
-<script lang='ts'>
-import Vue from 'vue'
-import { Component, Prop } from 'vue-property-decorator'
+<script>
 import UserLitteInfo from '@/components/MainSection/components/UserLittleInfo'
-import { IUserLittleInfo } from '@/Interfaces'
 
-interface IDataFnReturnInterface {
-    headerTitle: String,
-    headerLevelTwoTitle : {
-        nonStrongPart: String
-        strongPart: String
-    },
-    paragraphText: String,
-    creativeImage: any,
-    userInfo: IUserLittleInfo[]
-
-}
-
-@Component({
+export default {
   components: {
     UserLitteInfo
-  }
-})
-export default class WhoWeAreBlock extends Vue {
-  data () : IDataFnReturnInterface {
+  },
+  data () {
     return {
       headerTitle: 'Who We Are',
       headerLevelTwoTitle: {

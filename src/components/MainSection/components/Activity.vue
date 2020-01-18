@@ -8,19 +8,19 @@
   </div>
 </template>
 
-<script lang='ts'>
-import Vue from 'vue'
-import { Component, Prop } from 'vue-property-decorator'
-import { IActivityLittleInfo } from '@/Interfaces'
+<script>
 
-@Component({})
-export default class Activity extends Vue {
-    @Prop()
-    activityLittleInfo!: IActivityLittleInfo;
-
-    get activityName () : String {
+export default {
+  props: {
+    activityLittleInfo: {
+      required: true
+    }
+  },
+  computed: {
+    activityName () {
       return `${this.activityLittleInfo.field} ${this.activityLittleInfo.activity}`
     }
+  }
 }
 </script>
 

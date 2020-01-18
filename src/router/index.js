@@ -9,12 +9,8 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home
-  },
-  {
-    path: '/audio_analyzer',
-    name: 'audioAnalyzer',
-    component: () => import(/* webpackChunkName: "audioAnalyzer" */ '../views/AudioAnalyzer.vue')
   }
+
 ]
 
 const router = new VueRouter({

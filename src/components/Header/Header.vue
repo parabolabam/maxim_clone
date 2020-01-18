@@ -7,42 +7,36 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import { Component, Prop } from 'vue-property-decorator'
+<script>
 import Navigation from '@/components/Header/components/Navigation'
-import { INavigationMenuItem } from '@/Interfaces'
 
-@Component({
+export default {
   components: {
     Navigation
-  }
-})
-export default class Header extends Vue {
-  private navigationMenuItems: INavigationMenuItem[] = [
-    {
-      text: 'About'
-    },
-    {
-      text: 'Services'
-    },
-    {
-      text: 'Works'
-    },
-    {
-      text: 'Blog'
-    },
-    {
-      text: 'Contact'
-    },
-    {
-      text: 'Page'
-    }
-  ];
+  },
 
   data () {
     return {
-      ...this.navigationMenuItems,
+      navigationMenuItems: [
+        {
+          text: 'About'
+        },
+        {
+          text: 'Services'
+        },
+        {
+          text: 'Works'
+        },
+        {
+          text: 'Blog'
+        },
+        {
+          text: 'Contact'
+        },
+        {
+          text: 'Page'
+        }
+      ],
       logoText: 'MAXIM'
     }
   }

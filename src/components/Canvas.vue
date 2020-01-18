@@ -1,19 +1,14 @@
 <template>
-  <canvas :class="renderType" :width="width" :height="height" v-if="isRenderTypeOk"></canvas>
+  <canvas :class="renderType" :width="width" :height="height"></canvas>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
-import { ECanvasRenderTypes } from '@/enums'
+<script>
 
-@Component
-export default class Canvas extends Vue {
-  @Prop() private width!: string;
-  @Prop() private height!: string;
-  @Prop() private renderType!: ECanvasRenderTypes;
-
-  get isRenderTypeOk (): boolean {
-    return Object.values(ECanvasRenderTypes).includes(this.renderType)
+export default {
+  props: {
+    width: Number,
+    height: Number,
+    renderType: String
   }
 }
 </script>
