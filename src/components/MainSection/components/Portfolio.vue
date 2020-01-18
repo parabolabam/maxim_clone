@@ -1,12 +1,15 @@
 <template>
-  <div @mouseenter="onMouseEnter" @mouseleave="onMouseOut">
+  <div @mouseenter="onMouseEnter" @mouseleave="onMouseOut" class="portfolio-work-container">
     <div :class="['right-geometry', 'overlay', 'transitioned', { 'overlay-is-active' : hovered }]" >
       <div class="portfolio-name">Portfolio name</div>
-      <i class="icon-plus fas fa-plus"></i>
-    </div>
+        <div class="icon-plus" @click="$emit('revealPortfolio', portfolioKey)">
+          <i class="fas fa-plus"></i>
+        </div>
+      </div>
     <div :class="['right-geometry', 'portfolio-work', 'transitioned', { blurred: hovered }]">
       <img :src="portfolio.image" alt="pic for portfolio image">
-    </div></div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -14,6 +17,10 @@
 export default {
   name: 'portfolio-block',
   props: {
+    portfolioKey: {
+      type: Number,
+      required: true
+    },
     portfolio: {
       types: {
         type: Array,
@@ -24,6 +31,9 @@ export default {
         required: true
       }
     }
+  },
+  mounted () {
+    console.log('this.portfolioKey', this.portfolioKey)
   },
   data () {
     return {
@@ -68,6 +78,17 @@ export default {
     color: $color-white-solid;
     .portfolio-name {
       margin: 1.5rem;
+    }
+    .icon-plus {
+      font-size: 2em;
+      width: 5rem;
+      height: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        cursor: pointer;
+      }
     }
 
   }

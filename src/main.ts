@@ -4,6 +4,9 @@ import router from './router'
 import store from './store'
 import './registerServiceWorker'
 import VueFilterDateFormat from 'vue-filter-date-format'
+import Modal from '@/components/Modal'
+
+Vue.component('modal', Modal)
 
 Vue.use(VueFilterDateFormat, {
   dayOfWeekNames: [
