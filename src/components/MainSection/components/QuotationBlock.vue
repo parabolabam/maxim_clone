@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import HooperSlider from '@/components/HooperSlider'
 
 export default {
   name: 'main-section-header',
