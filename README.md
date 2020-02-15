@@ -3,6 +3,7 @@
  - style modal window
  - add tests support
  - deploy
+ - mobile design
 
 ## Project setup
 ```
